@@ -21,6 +21,14 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'simplecov'
+end
+
 group :development do
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

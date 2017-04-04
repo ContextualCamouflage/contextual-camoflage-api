@@ -2,11 +2,11 @@ module Api
   module V1
     class SubmissionsController < ActionController::API
       def index
-        # @submissions = Submission.visible_to(user) #???
+        # Send the Frontend a JSON payload of each illness, with the corresponding count
       end
 
       def create
-        @submission = Submission.new(submission_params)
+        @submission = Submission.create(submission_params)
       end
 
       private

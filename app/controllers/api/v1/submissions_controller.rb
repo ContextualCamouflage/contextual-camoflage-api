@@ -11,7 +11,7 @@ module Api
 
       private
       def submission_params
-        params.require(:submission).permit(:cookie, :illness, :relationship, :city, :zip_code)
+        params.require(:submission).permit(:cookie, :illness, :relationship, :ip_address)
       end
     end
   end

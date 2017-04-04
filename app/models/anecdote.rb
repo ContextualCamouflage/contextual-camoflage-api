@@ -1,4 +1,3 @@
 class Anecdote < ApplicationRecord
-  belongs_to :story
-  belongs_to :illness
+  belongs_to :submission, :foreign_key => :cookie
 end

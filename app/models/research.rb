@@ -1,3 +1,3 @@
 class Research < ApplicationRecord
-  belongs_to :submission, :foreign_key => :page_id
+  belongs_to :submission, :foreign_key => :cookie
 end

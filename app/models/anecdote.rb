@@ -1,9 +1,3 @@
 class Anecdote < ApplicationRecord
-  belongs_to :submission, :foreign_key => :cookie
-
-  private # should these methods be private??
-    def random_anecdote(data)
-      
-    end
-
+  belongs_to :submission, :primary_key => :cookie, :foreign_key => :cookie
 end

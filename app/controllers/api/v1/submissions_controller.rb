@@ -13,7 +13,7 @@ module Api
 
       private
       def submission_params
-        params.require(:submission).permit(:cookie, :illness, :relationship, :ip_address)
+        params.require(:submission).permit(:cookie, :illness, :relationship, :ip_address, :city)
       end
 
       def count_by_illness(city)

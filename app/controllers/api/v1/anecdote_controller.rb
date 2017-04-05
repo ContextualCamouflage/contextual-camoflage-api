@@ -3,11 +3,16 @@ module Api
     class AnecdoteController < ActionController::API
 
     def index
-      # JSON payload: Frontend will send you an illness, return a single anecdote that matches that illness
     end
 
     def create
       @anecdote  = Anecdote.create(anecdote_params)
+    end
+
+    def random
+      # JSON payload: Frontend will send you an illness, return a single anecdote that matches that illness
+      random = Anecdote.all.includes(:submission).where(submissions: {illness: params[:illness]}).sample
+      render json: random.to_json, status: 200
     end
 
     private

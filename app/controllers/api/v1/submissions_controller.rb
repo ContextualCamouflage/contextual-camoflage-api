@@ -3,8 +3,8 @@ module Api
     class SubmissionsController < ActionController::API
       def index
         # Send the Frontend a JSON payload of each illness, with the corresponding count
-        illness_counts = count_by_illness(Submission.all)
-        render json: illness_counts.to_json, status: 200 #dunno about this?
+        illness_counts = count_by_illness(params[:city])
+        render json: illness_counts.to_json, status: 200 
       end
 
       def create
@@ -14,6 +14,10 @@ module Api
       private
       def submission_params
         params.require(:submission).permit(:cookie, :illness, :relationship, :ip_address)
+      end
+
+      def count_by_illness(city)
+        Submission.where(city: city).group("illness").count
       end
     end
   end

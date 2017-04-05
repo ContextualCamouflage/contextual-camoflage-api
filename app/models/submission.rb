@@ -1,6 +1,6 @@
 class Submission < ApplicationRecord
-  has_many :anecdotes
-  has_many :researches
+  has_many :anecdotes, :primary_key => :cookie, :foreign_key => :cookie
+  has_many :researches, :primary_key => :cookie, :foreign_key => :cookie
   before_save :geocode_location
   validate :double_submit_same_illness
 

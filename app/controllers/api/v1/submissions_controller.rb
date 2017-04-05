@@ -3,6 +3,8 @@ module Api
     class SubmissionsController < ActionController::API
       def index
         # Send the Frontend a JSON payload of each illness, with the corresponding count
+        illness_counts = count_by_illness(Submission.all)
+        render json: illness_counts.to_json, status: 200 #dunno about this?
       end
 
       def create

@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SubmissionsController < ActionController::API
+    class SubmissionsController < ApiController
       def index
         # Send the Frontend a JSON payload of each illness, with the corresponding count
         illness_counts = count_by_illness(params[:city])

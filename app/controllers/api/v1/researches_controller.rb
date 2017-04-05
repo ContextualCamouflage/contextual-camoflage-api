@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ResearchesController < ActionController::API
+    class ResearchesController < ApiController
 
       def create
         @research = Research.create!(research_params)

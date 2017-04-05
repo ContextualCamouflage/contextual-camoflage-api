@@ -1,13 +1,13 @@
 module Api
   module V1
-    class ResearchController < ActionController::API
+    class ResearchesController < ActionController::API
 
       def create
-        @research = Research.create(research_params)
+        @research = Research.create!(research_params)
       end
 
       private
-      def submission_params
+      def research_params
         params.require(:research).permit(:age, :gender, :occupation, :race, :cookie)
       end
     end

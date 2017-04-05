@@ -4,11 +4,11 @@ module Api
       def index
         # Send the Frontend a JSON payload of each illness, with the corresponding count
         illness_counts = count_by_illness(params[:city])
-        render json: illness_counts.to_json, status: 200 
+        render json: illness_counts.to_json, status: 200
       end
 
       def create
-        @submission = Submission.create(submission_params)
+        @submission = Submission.create!(submission_params)
       end
 
       private

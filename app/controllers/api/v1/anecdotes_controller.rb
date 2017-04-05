@@ -1,6 +1,6 @@
 module Api
   module V1
-    class AnecdoteController < ApiController
+    class AnecdotesController < ApiController
 
     def index
     end

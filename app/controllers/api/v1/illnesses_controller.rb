@@ -4,7 +4,7 @@ module Api
 
       def index
         @illnesses = Illness.all
-        render json: @illnesses.to_json, status 200
+        render json: @illnesses.to_json, status: 200
       end
 
       def show

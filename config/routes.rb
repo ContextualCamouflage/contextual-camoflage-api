@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :submissions, only: [:create, :index]
       resources :anecdotes, only: [:create]
       get '/anecdotes/random', to: 'anecdotes#random'
-      get '/illnesses', to: 'illnesses#show'
+      resources :illnesses, only: [:index, :show]
       resources :researches, only: [:create]
     end
   end

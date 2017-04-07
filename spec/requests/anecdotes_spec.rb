@@ -1,16 +1,9 @@
 require 'rails_helper'
 require 'faker'
-require 'pry'
 
 RSpec.describe "Anecdotes API" do
   let!(:submission) { create(:submission) }
-  let!(:anecdote) { create(:anecdote, cookie: submission.cookie) }
-  let!(:auth_headers) {
-    {
-      'Content-Type'=>'application/json',
-      'Authorization'=>'Basic dGVzdEB0ZXN0LmNvbTpwYXNzd29yZA==',
-    }
-  }
+  let!(:anecdote) { create(:anecdote) }
 
   describe "GET /anecdotes/random" do
     before { get "/anecdotes/random", nil, auth_headers}
@@ -40,7 +33,7 @@ RSpec.describe "Anecdotes API" do
     let(:valid_attributes) { { body: 'This is my anecdote!', cookie: 'thisismycookie' } }
 
     context "when request attributes are valid" do
-      before { post "/anecdotes", params: valid_attributes, headhers: auth_headers }
+      before { post "/anecdotes", params: valid_attributes}
 
       it "returns status code 204" do
         expect(response).to have_http_status(204)

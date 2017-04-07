@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby'
+gem 'bcrypt'
 
 gem 'geocoder'
 gem 'pg'
@@ -22,7 +22,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'faker'
   gem 'pry-rails'
-  gem 'wdm'
 end
 
 group :test do

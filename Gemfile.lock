@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/codahale/bcrypt-ruby
-  revision: 23b0517e20e7ddf2e733c1bcdb22b0b12166f042
-  specs:
-    bcrypt (3.1.11)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    bcrypt (3.1.11)
     builder (3.2.3)
     byebug (9.0.6)
     choice (0.2.0)
@@ -179,7 +174,6 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2017.2)
       tzinfo (>= 1.0.0)
-    wdm (0.1.1)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -189,7 +183,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bcrypt!
+  bcrypt
   byebug
   database_cleaner
   factory_girl_rails
@@ -208,7 +202,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
-  wdm
 
 BUNDLED WITH
    1.14.6

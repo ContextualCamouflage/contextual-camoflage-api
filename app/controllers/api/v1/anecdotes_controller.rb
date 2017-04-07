@@ -11,7 +11,11 @@ module Api
 
     def random
       # JSON payload: Frontend will send you an illness, return a single anecdote that matches that illness
-      random = Anecdote.all.includes(:submission).where(submissions: {illness: params[:illness]}).sample
+      if params[:illness]
+        random = Anecdote.all.includes(:submission).where(submissions: {illness: params[:illness]}).sample
+      else
+        random = Anecdote.random
+      end
       render json: random.to_json, status: 200
     end
 
